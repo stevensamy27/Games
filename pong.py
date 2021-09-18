@@ -39,9 +39,16 @@ def paddle_a_up():
     y +=20
     paddle_a.set(y)
 
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -=20
+    paddle_a.set(y)
+
 #Keyboard binding
 wn.listen()
 wn.onkeypress(paddle_a_up,"w")
+wn.onkeypress(paddle_a_down,"s")
 
 #Main Game Loop
 while True:
