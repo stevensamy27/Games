@@ -26,14 +26,24 @@ paddle_b.penup()
 paddle_b.goto(350, 0)
 
 #Ball
-Ball = turtle.Turtle()
-Ball.speed(0)
-Ball.shape("square")
-Ball.color("white")
-Ball.penup()
-Ball.goto(0, 0)
-Ball.dx = 2 
-Ball.dy = 2
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("square")
+ball.color("white")
+ball.penup()
+ball.goto(0, 0)
+ball.dx = 2 
+ball.dy = 2
+
+#pen
+pen = turtle.Turtle
+pen.speed(0)
+pen.shape("sqare")
+pen.color("white")
+# pen.penup
+# pen.hideturtle
+pen.goto(0, 260)
+pen.write("Player A:0  Player B:0 ", align="center", fot=("Courier", 24, "Normal"))
 #Function
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -68,5 +78,5 @@ while True:
     wn.update()
 
     #Move The Ball
-    # Ball.setx(Ball.xcore() + Ball.dx)
-    # Ball.sety(Ball.ycore() + Ball.dy)
+    ball.setx(ball.xcore() + ball.dx)
+    ball.sety(ball.ycore() + ball.dy)
