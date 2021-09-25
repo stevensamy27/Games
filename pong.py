@@ -1,4 +1,5 @@
 import turtle
+import os
 
 wn = turtle.Screen()
 wn.title("Pong")
@@ -44,6 +45,8 @@ pen.color("white")
 # pen.hideturtle
 pen.goto(0, 260)
 pen.write("Player A:0  Player B:0 ", align="center", fot=("Courier", 24, "Normal"))
+
+
 #Function
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -77,6 +80,17 @@ wn.onkeypress(paddle_b_down,"Down")
 while True:
     wn.update()
 
-    #Move The Ball
+#Move The Ball
     ball.setx(ball.xcore() + ball.dx)
     ball.sety(ball.ycore() + ball.dy)
+
+ # Top and bottom
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+        os.system("afplay bounce.wav&")
+    
+    elif ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+        os.system("afplay bounce.wav&") 
